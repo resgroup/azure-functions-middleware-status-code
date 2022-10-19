@@ -36,7 +36,7 @@ namespace MiddlewareStatusCode
 
             var response = request.CreateResponse(HttpStatusCode.NotFound);
 
-            await response.WriteAsJsonAsync(exception.Message, response.StatusCode);
+            await response.WriteAsJsonAsync(new { exception.Message }, response.StatusCode);
 
             context.GetInvocationResult().Value = response;
         }
