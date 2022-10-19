@@ -10,7 +10,7 @@ namespace MiddlewareStatusCode
             var host = new HostBuilder()
                 .ConfigureFunctionsWorkerDefaults(worker =>
                     worker
-                    .UseMiddleware<CustomExceptionHandlerMiddleware>()
+                    .UseMiddleware<CustomMiddleware.ExceptionHandlingMiddleware>()
                 )
                 .Build();
 
